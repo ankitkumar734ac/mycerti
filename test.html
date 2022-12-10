@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>
+		How to create an image element
+		dynamically using JavaScript ?
+	</title>	
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body id = "body" style = "text-align:center;">
+	
+	<div id="aa"></div>
+	
+<script>
+$(document).ready(function(){
+  var dir = "img/aiml/"; // folder location
+  var fileextension = ".jpg"; // image format
+  var i = "1";
+  var ele="";
+  $(function imageloop(){
+    $("<img />").attr('src', dir + i + fileextension ).appendTo(".testing");
+    ele+='<img src="'+dir+i+fileextension+'" />';
+    if (i==14){
+  		document.getElementById("aa").innerHTML = ele; 	
+    }
+    else{
+      i++;
+      imageloop();
+    };
+  });  
+  
+});
+</script>
+</body>
+</html>
